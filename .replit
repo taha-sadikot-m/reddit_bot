@@ -1,0 +1,44 @@
+# Replit Configuration File
+# This tells Replit how to run your Reddit Marketing Bot
+
+entrypoint = "enhanced_app.py"
+
+[nix]
+channel = "stable-23_05"
+
+[env]
+PYTHONPATH = "/home/runner/${REPL_SLUG}"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "requirements.txt"]
+
+[languages]
+
+[languages.python3]
+pattern = "**/*.py"
+
+[languages.python3.languageServer]
+start = "pylsp"
+
+[deployment]
+run = ["sh", "-c", "streamlit run enhanced_app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --server.fileWatcherType none --browser.gatherUsageStats false"]
+
+[packager]
+language = "python3"
+ignoredPackages = ["unit_tests"]
+
+[packager.features]
+enabledForHosting = false
+packageSearch = true
+guessImports = true
+
+[languages.python3]
+pattern = "**/*.py"
+syntax = "python"
+
+[languages.python3.languageServer]
+start = "python -m pylsp"
+
+[[ports]]
+localPort = 8501
+externalPort = 80
