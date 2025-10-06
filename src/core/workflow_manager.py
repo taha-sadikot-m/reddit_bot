@@ -9,10 +9,10 @@ from datetime import datetime
 import json
 
 # Import our components
-from business_analyzer import BusinessAnalyzer
-from reddit_analyzer import RedditAnalyzer
-from ai_response_generator import AIResponseGenerator
-from reddit_poster import RedditPoster
+from .business_analyzer import BusinessAnalyzer
+from .reddit_analyzer import RedditAnalyzer
+from .ai_response_generator import AIResponseGenerator
+from .reddit_poster import RedditPoster
 
 # LangGraph imports for workflow orchestration
 from langgraph.graph import StateGraph, END
